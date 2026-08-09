@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پرسشنامه خودمراقبتی بیماران MS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+<img src="images/university-logo.webp" alt="University Logo" class="logo">
+    <h1>
+      بررسی عوامل مرتبط با خودمراقبتی در بیماران مبتلا به مولتیپل اسکلروزیس (MS)
+    </h1>
+  </header>
+
+  <main class="container">
+
+    <!-- صفحه خوش‌آمدگویی -->
+    <div class="welcome-box">
+      <h2>به نام خدا</h2>
+      <p><strong>با سلام و احترام</strong></p>
+      
+      <p>
+        از اینکه با صرف وقت ارزشمند خود در این پژوهش مشارکت می‌نمایید، صمیمانه سپاسگزاریم.
+      </p>
+      
+      <p>
+        این پرسشنامه بخشی از یک طرح پژوهشی با عنوان <strong>«بررسی عوامل مرتبط با خودمراقبتی در بیماران مبتلا به مولتیپل اسکلروزیس (MS)»</strong> می‌باشد که با هدف بررسی عوامل مرتبط با رفتارهای خودمراقبتی در بیماران مبتلا به مولتیپل اسکلروزیس طراحی شده است.
+      </p>
+      <p>
+        تکمیل این پرسشنامه حدود ۱۰ دقیقه زمان خواهد برد. مشارکت شما در این پژوهش کاملاً داوطلبانه است و اطلاعات و پاسخ‌های ارائه‌شده محرمانه بوده و صرفاً در راستای اهداف پژوهشی مورد استفاده قرار خواهد گرفت. همچنین نتایج پژوهش به صورت کلی گزارش خواهد شد و از اطلاعات فردی شرکت‌کنندگان به صورت قابل شناسایی استفاده نخواهد شد.
+      </p>
+      <p>
+        از همکاری شما سپاسگزاریم.
+      </p>
+
+      <div class="research-info" style="text-align: right; margin: 20px 0; line-height: 1.8;">
+        <p><strong>استاد راهنما:</strong><br>دکتر علیرضا حیدرنیا</p>
+        <p><strong>پژوهشگر:</strong><br>فاطمه آفاقی، دانشجوی کارشناسی ارشد آموزش بهداشت و ارتقای سلامت، دانشگاه تربیت مدرس</p>
+      </div>
+
+      <p style="font-size: 0.9em; color: #555;">
+        <em>با انتخاب گزینه «تأیید و شروع پرسشنامه»، رضایت آگاهانه خود را برای شرکت داوطلبانه در این پژوهش و تکمیل پرسشنامه اعلام می‌نمایم.</em>
+      </p>
+
+      <button onclick="startQuestionnaire()">تأیید و شروع پرسشنامه</button>
+    </div>
+
+    <!-- محل قرارگیری سوالات -->
+<!-- نوار پیشرفت پرسشنامه -->
+<div id="progress-wrapper" style="display:none; margin-bottom: 20px;">
+  <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+    <span>پیشرفت پرسشنامه</span>
+    <span id="progress-text">0%</span>
+  </div>
+  <div style="width: 100%; background-color: #e0e0e0; border-radius: 8px; overflow: hidden; height: 12px;">
+    <div id="progress-bar" style="width: 0%; height: 100%; background-color: #4caf50; transition: width 0.3s ease;"></div>
+  </div>
+</div>
+
+<!-- کانتینر نمایش سوالات -->
+<div id="question-container" style="display:none;"></div>
+    <!-- 🟢 دکمه‌های جابه‌جایی دقیقاً در این مکان قرار می‌گیرند 🟢 -->
+    <div id="navigation-buttons" class="navigation-buttons" style="display:none; margin-top: 20px;">
+      <button id="prev-btn" onclick="prevQuestion()">قبلی</button>
+      <button id="next-btn" onclick="nextQuestion()">بعدی</button>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
