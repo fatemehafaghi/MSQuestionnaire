@@ -55,69 +55,65 @@ const questions = [
 </div>
   `,
 
-   <!-- قد -->
-  <div class="form-group">
-    <label>قد (سانتی‌متر)</label>
-    <input 
-      type="number" 
-      name="height" 
-      id="height"
-      placeholder="مثلاً 165"
-      min="100"
-      max="250"
-      step="0.1"
-      oninput="calculateBMI()"
-    >
+    <div class="question-box">
+    <h2>اطلاعات دموگرافیک</h2>
+
+    <div class="form-group">
+      <label>قد (سانتی‌متر)</label>
+      <input
+        type="number"
+        name="height"
+        id="height"
+        placeholder="مثلاً 165"
+        min="100"
+        max="250"
+        step="0.1"
+        oninput="calculateBMI()"
+      >
+    </div>
+
+    <div class="form-group">
+      <label>وزن (کیلوگرم)</label>
+      <input
+        type="number"
+        name="weight"
+        id="weight"
+        placeholder="مثلاً 60"
+        min="20"
+        max="300"
+        step="0.1"
+        oninput="calculateBMI()"
+      >
+    </div>
+
+    <div class="form-group">
+      <label>شاخص توده بدنی (BMI)</label>
+      <input
+        type="text"
+        name="bmi"
+        id="bmi"
+        readonly
+        placeholder="پس از وارد کردن قد و وزن محاسبه می‌شود"
+      >
+    </div>
   </div>
-
-  <!-- وزن -->
-  <div class="form-group">
-    <label>وزن (کیلوگرم)</label>
-    <input 
-      type="number" 
-      name="weight" 
-      id="weight"
-      placeholder="مثلاً 60"
-      min="20"
-      max="300"
-      step="0.1"
-      oninput="calculateBMI()"
-    >
-  </div>
-
-  <!-- BMI -->
-  <div class="form-group">
-    <label>شاخص توده بدنی (BMI)</label>
-    <input 
-      type="text" 
-      name="bmi" 
-      id="bmi"
-      readonly
-      placeholder="پس از وارد کردن قد و وزن محاسبه می‌شود"
-    >
-  </div>
-
-</div>
-`,
-  
-
-
+  `,
 
 function calculateBMI() {
-  const height = parseFloat(document.getElementById("height").value);
-  const weight = parseFloat(document.getElementById("weight").value);
+  const height = parseFloat(document.getElementById("height")?.value);
+  const weight = parseFloat(document.getElementById("weight")?.value);
   const bmiInput = document.getElementById("bmi");
+
+  if (!bmiInput) return;
 
   if (height > 0 && weight > 0) {
     const heightInMeter = height / 100;
     const bmi = weight / (heightInMeter * heightInMeter);
-
     bmiInput.value = bmi.toFixed(1);
   } else {
     bmiInput.value = "";
   }
 }
-
 
 
   // صفحه ۳: شغل
